@@ -43,19 +43,23 @@ int main(){
 
 		switch(ch) {
 			case KEY_UP:
-				dir=UP;
-				//y = (y + LINES - 1) % LINES;
+				if(dir != DOWN){
+					dir=UP;}
+					//y = (y + LINES - 1) % LINES;
 				break;
 			case KEY_DOWN:
-				dir=DOWN;
+				if(dir != UP){
+					dir=DOWN;}
 				//y = (y + 1) % LINES;
 				break;
 			case KEY_LEFT:
-				dir=LEFT;
+				if((dir != RIGHT) && (dir != NONE)){
+				dir=LEFT;}
 				//x = (x + COLS - 1) % COLS;
 				break;
 			case KEY_RIGHT:
-				dir=RIGHT;
+				if(dir != LEFT){
+				dir=RIGHT;}
 				//x = (x + 1) % COLS;
 				break;
 			}
